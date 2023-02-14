@@ -63,7 +63,7 @@ _data params ['_groups', '_vehicles', '_objects'];
 
     private _grp = createGroup [_side, true]; // Delete group when empty
     {
-        _x params ["_type","_pos","_vectorDirAndUp","_gear", "_vehicleIndex", "_vehicleRole"];
+        _x params ["_type","_pos","_vectorDirAndUp","_gear", "_vehicleIndex", "_vehicleRole", "_unused", "_assignGearFaction", "_assignGearRole"];
         private _unit = _grp createUnit [_type, [0,0,0],[] , 0, "NONE"];
         _spawnedUnits pushBack _unit;
         _unit setPosATL _pos;
@@ -97,6 +97,12 @@ _data params ['_groups', '_vehicles', '_objects'];
                     _unit moveInTurret [_vehicle, _path];
                 };
             };
+        };
+
+        if (!isNil "_assignGearFaction" && !isNil "_assignGearRole") then {
+            [_unit, _assignGearFaction] call EFUNC(assignGear,setFaction);
+            [_unit, _assignGearRole] call EFUNC(assignGear,setRole);
+            [_unit] call EFUNC(assignGear,assignGear);
         };
     } forEach _units;
     (units _grp) join _grp;

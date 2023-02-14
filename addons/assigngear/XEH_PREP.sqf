@@ -26,6 +26,10 @@ PREP(testGear);
 PREP(moduleAIGear);
 PREP(AIGearEH);
 PREP(initAIGear);
+PREP(role);
+PREP(faction);
+PREP(setRole);
+PREP(setFaction);
 
 PREP(gui_gearSelector_init);
 PREP(gui_gearSelector_loadFactions);

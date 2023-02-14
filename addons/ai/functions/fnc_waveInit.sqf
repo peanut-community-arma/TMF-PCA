@@ -77,7 +77,9 @@ if(!(_logic getVariable [QGVAR(init),false])) then {
                 getUnitLoadout _unit,
                 -1,
                 [],
-                getDir _unit
+                getDir _unit,
+                _unit call EFUNC(assignGear,faction),
+                _unit call EFUNC(assignGear,role)
             ];
             if(!isNull objectParent _x) then {
                 _data set [4, _vehicles find (objectParent _x)];
