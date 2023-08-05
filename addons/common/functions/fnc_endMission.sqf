@@ -25,7 +25,7 @@ private _message = format["[TMF] Ending mission..."];
 GVAR(endMissionWait) = -1;
 GVAR(ending) = true;
 
-if (!isNil "ocap_fnc_exportData") then {
+if (!isNil "OCAP_recorder_fnc_exportData") then {
     _message = format["[TMF] OCAP detected exporting (10 second timeout)..."];
     [_message,'tac1_admin_fnc_messageAdmin',true] call BIS_fnc_MP;
 
@@ -34,7 +34,7 @@ if (!isNil "ocap_fnc_exportData") then {
     // Start in own 'thread'
     [] spawn {
          {
-            [] call ocap_fnc_exportData;
+            [] call OCAP_recorder_fnc_exportData;
             private _message = format["[TMF] OCAP Export complete. Ending..."];
             [_message,'tac1_admin_fnc_messageAdmin',true] call BIS_fnc_MP;
             GVAR(endMissionWait) = -1;
