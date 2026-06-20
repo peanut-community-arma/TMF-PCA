@@ -65,6 +65,7 @@ _data params ['_groups', '_vehicles', '_objects'];
     {
         _x params ["_type","_pos","_vectorDirAndUp","_gear", "_vehicleIndex", "_vehicleRole", "_unused", "_assignGearFaction", "_assignGearRole"];
         private _unit = _grp createUnit [_type, [0,0,0],[] , 0, "NONE"];
+        _unit disableAI "ALL";
         _spawnedUnits pushBack _unit;
         _unit setPosATL _pos;
         _unit setUnitLoadout [_gear, false];
@@ -116,6 +117,10 @@ _data params ['_groups', '_vehicles', '_objects'];
     };
     _spawnedGroups pushBack _grp;
 } forEach _groups;
+
+{
+    _x enableAI "ALL";
+} forEach _spawnedUnits;
 
 _wave = _logic getVariable ["Waves",1];
 _logic setVariable ["Waves", (_wave-1), true];
