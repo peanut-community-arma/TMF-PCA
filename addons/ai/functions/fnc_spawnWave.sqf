@@ -137,7 +137,7 @@ if(_logic getVariable ["Waves",1] > 0) then {
             CBA_missionTime > (_this # 4) &&
             {{!alive _x || lifeState _x isEqualTo "INCAPACITATED"} count (_this # 3) >= (_this # 2)}
         },
-        FUNC(spawnWave),
+        {[_this # 0] spawn FUNC(spawnWave)},
         [_logic,_spawnedGroups,_whenDead * count _spawnedUnits,_spawnedUnits, CBA_missionTime + _time]
     ] call CBA_fnc_waitUntilAndExecute;
 

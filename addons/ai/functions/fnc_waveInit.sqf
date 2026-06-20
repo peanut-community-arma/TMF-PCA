@@ -133,6 +133,5 @@ if(!(_logic getVariable [QGVAR(init),false])) then {
 
 if(_activated) then {
     private _delay = _logic getVariable ["Delay",0];
-    [FUNC(spawnWave),[_logic],_delay] call CBA_fnc_waitAndExecute;
+    [{[_this # 0] spawn FUNC(spawnWave)},[_logic],_delay] call CBA_fnc_waitAndExecute;
 };
-
