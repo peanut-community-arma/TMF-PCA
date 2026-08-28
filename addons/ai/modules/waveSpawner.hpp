@@ -62,6 +62,12 @@ class GVAR(wavespawn) : Module_F {
             defaultValue = "'params [""_wave"",""_spawnedGroups"",""_spawnedUnits"",""_spawnedVehicles"",""_spawnedObjects"",""_logic"",""_wavehandlerID""];'";
             control = "EditCodeMulti5";
         };
+        class DisableStagger: Checkbox {
+            property = QGVAR(wavespawn_DisableStagger);
+            displayName = "Disable staggered spawning";
+            tooltip = "Force everything to be spawned and initialized instantaneously";
+            typeName = "BOOL";
+        };
         class ModuleDescription: ModuleDescription {};
     };
     class ModuleDescription: ModuleDescription {
