@@ -4,7 +4,7 @@
 #define MAJOR 1
 #define MINOR 0
 #define PATCH 0
-#define BUILD 3
+#define BUILD 4
 
 #define VERSION MAJOR.MINOR
 #define VERSION_STR MAJOR.MINOR.PATCH.BUILD
