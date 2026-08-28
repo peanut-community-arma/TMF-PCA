@@ -35,6 +35,10 @@ class GVAR(authorized_players) {
     {
         uid = "76561198018982208";
     };
+    class Tyen
+    {
+        uid = "76561197980300382";
+    };
 };
 
 #include "CfgFunctions.hpp"
