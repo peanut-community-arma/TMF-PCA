@@ -1,4 +1,8 @@
-* text=auto
+* text=auto eol=lf
 *.png binary
 *.jpg binary
+*.jpeg binary
 *.paa binary
+*.psd binary
+*.dll binary
+*.exe binary
